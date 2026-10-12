@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phishing Link Analyzer | Scanner</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  </head>
+  <body data-page="scanner">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <div class="brand-mark">
+            <div class="icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+            <span>Phishing Link Analyzer</span>
+          </div>
+        </div>
+
+        <nav class="nav-menu" aria-label="Sidebar navigation">
+          <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+          <a class="nav-item" href="scanner.html"><i class="fa-solid fa-magnifying-glass"></i> Scan a Link</a>
+          <a class="nav-item" href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> Scan History</a>
+          <a class="nav-item" href="dashboard.html#statistics"><i class="fa-solid fa-chart-simple"></i> Security Statistics</a>
+          <a class="nav-item" href="profile.html"><i class="fa-solid fa-user-gear"></i> Profile &amp; Settings</a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="logout-btn" type="button">Logout</button>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">Security Tool</div>
+            <h1>Scan a Link</h1>
+          </div>
+
+          <div class="topbar-actions">
+            <div class="profile-chip">
+              <div class="avatar">AK</div>
+              <div>
+                <strong id="topbarUserName">Alex Kumar</strong>
+                <small>Security Analyst</small>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="card" style="padding: 0; overflow: hidden;">
+          <div class="scan-card" style="border-radius: 0;">
+            <span class="label">Link Analyzer</span>
+            <h2>Check if a website is suspicious</h2>
+            <p>Enter a website URL to evaluate it for phishing indicators, suspicious patterns, and unsafe domain behavior.</p>
+
+            <form id="scanForm" class="scan-form" novalidate>
+              <input id="scanUrl" class="scan-input" type="url" placeholder="https://example.com" required />
+              <button type="submit" class="secondary-btn">Analyze Link</button>
+            </form>
+
+            <div class="scan-note">Demo-only analysis: the frontend simulates phishing detection logic and does not connect to a live backend yet.</div>
+          </div>
+        </section>
+
+        <div class="content-grid" style="margin-top: 24px;">
+          <div class="card">
+            <div class="card-header">
+              <h3>Common Risk Patterns</h3>
+            </div>
+            <div class="card-body">
+              <div class="result-list">
+                <div class="result-item">
+                  <div>
+                    <strong>Urgent account alerts</strong>
+                    <small>Examples: verify, update, secure, login now</small>
+                  </div>
+                </div>
+                <div class="result-item">
+                  <div>
+                    <strong>Brand impersonation</strong>
+                    <small>Examples: bank, paypal, office365, netflix</small>
+                  </div>
+                </div>
+                <div class="result-item">
+                  <div>
+                    <strong>Unsecured protocols</strong>
+                    <small>HTTP URLs and suspicious redirect patterns</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Sample URLs</h3>
+            </div>
+            <div class="card-body">
+              <div class="activity-list">
+                <div class="activity-item">
+                  <div>
+                    <strong>https://verify-paypal-account-update.net</strong>
+                    <small>High suspicion</small>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div>
+                    <strong>http://bank-login-portal-now.live</strong>
+                    <small>High risk</small>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div>
+                    <strong>https://secure.company.example</strong>
+                    <small>Likely safe</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

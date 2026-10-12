@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phishing Link Analyzer | Profile</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  </head>
+  <body data-page="profile">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <div class="brand-mark">
+            <div class="icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+            <span>Phishing Link Analyzer</span>
+          </div>
+        </div>
+
+        <nav class="nav-menu" aria-label="Sidebar navigation">
+          <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+          <a class="nav-item" href="scanner.html"><i class="fa-solid fa-magnifying-glass"></i> Scan a Link</a>
+          <a class="nav-item" href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> Scan History</a>
+          <a class="nav-item" href="dashboard.html#statistics"><i class="fa-solid fa-chart-simple"></i> Security Statistics</a>
+          <a class="nav-item" href="profile.html"><i class="fa-solid fa-user-gear"></i> Profile &amp; Settings</a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="logout-btn" type="button">Logout</button>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">Account</div>
+            <h1>Profile &amp; Settings</h1>
+          </div>
+
+          <div class="topbar-actions">
+            <div class="profile-chip">
+              <div class="avatar">AK</div>
+              <div>
+                <strong id="topbarUserName">Alex Kumar</strong>
+                <small>Security Analyst</small>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="page-header">
+          <div>
+            <h2 class="page-heading">Account Overview</h2>
+            <p class="page-subtitle">Manage your security preferences and personal details.</p>
+          </div>
+        </div>
+
+        <div class="content-grid">
+          <div class="card">
+            <div class="card-header">
+              <h3>Profile Information</h3>
+            </div>
+            <div class="card-body">
+              <div class="profile-chip" style="margin-bottom: 18px; background: transparent; border: none; padding: 0;">
+                <div class="avatar" style="width: 56px; height: 56px; font-size: 1.2rem;">AK</div>
+                <div>
+                  <strong id="profileName">Alex Kumar</strong>
+                  <small id="profileEmail">alex@example.com</small>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="displayName">Display name</label>
+                <input id="displayName" class="form-control" type="text" value="Alex Kumar" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="role">Role</label>
+                <input id="role" class="form-control" type="text" value="Security Analyst" />
+              </div>
+
+              <div id="profileMessage" class="form-message" aria-live="polite"></div>
+              <button id="saveProfileButton" type="button" class="primary-btn" style="width: auto; padding: 0 24px;">Save Changes</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Preferences</h3>
+            </div>
+            <div class="card-body">
+              <div id="profileSettingsForm" class="setting-list">
+                <div class="setting-item">
+                  <div>
+                    <strong>Dark mode</strong>
+                    <small>Use a darker interface for low-light sessions</small>
+                  </div>
+                  <button type="button" class="toggle" data-setting="darkMode" aria-label="Toggle dark mode"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

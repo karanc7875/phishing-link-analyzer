@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phishing Link Analyzer | Dashboard</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body data-page="dashboard">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <div class="brand-mark">
+            <div class="icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+            <span>Phishing Link Analyzer</span>
+          </div>
+        </div>
+
+        <nav class="nav-menu" aria-label="Sidebar navigation">
+          <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+          <a class="nav-item" href="scanner.html"><i class="fa-solid fa-magnifying-glass"></i> Scan a Link</a>
+          <a class="nav-item" href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> Scan History</a>
+          <a class="nav-item" href="dashboard.html#statistics"><i class="fa-solid fa-chart-simple"></i> Security Statistics</a>
+          <a class="nav-item" href="profile.html"><i class="fa-solid fa-user-gear"></i> Profile &amp; Settings</a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="logout-btn" type="button">Logout</button>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">Overview</div>
+            <h1>Security Overview</h1>
+          </div>
+
+          <div class="topbar-actions">
+            <div class="profile-chip">
+              <div class="avatar">AK</div>
+              <div>
+                <strong id="topbarUserName">Alex Kumar</strong>
+                <small>Security Analyst</small>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="card scan-card" aria-labelledby="scan-title">
+          <span class="label">Live Demo</span>
+          <h2 id="scan-title">Check a suspicious link</h2>
+          <p>Analyze a website URL to identify potential phishing threats.</p>
+
+          <form id="quickScanForm" class="scan-form" novalidate>
+            <input id="quickUrl" class="scan-input" type="url" placeholder="https://example.com" required />
+            <button type="submit" class="secondary-btn">Scan Link</button>
+          </form>
+
+          <div class="scan-note">Privacy note: Demo scans are simulated for frontend display only and do not transmit data externally.</div>
+        </section>
+
+        <section id="statistics" class="stats-grid" style="margin-top: 24px;">
+          <article class="stat-card info">
+            <div class="stat-top">
+              <div class="stat-icon"><i class="fa-solid fa-link"></i></div>
+              <span class="trend-up">+12.4%</span>
+            </div>
+            <h3 data-stat="total">0</h3>
+            <p>Total Links Scanned</p>
+          </article>
+
+          <article class="stat-card safe">
+            <div class="stat-top">
+              <div class="stat-icon"><i class="fa-solid fa-shield-heart"></i></div>
+              <span class="trend-up">+8.1%</span>
+            </div>
+            <h3 data-stat="safe">0</h3>
+            <p>Safe Links</p>
+          </article>
+
+          <article class="stat-card warning">
+            <div class="stat-top">
+              <div class="stat-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <span class="trend-up">+3.8%</span>
+            </div>
+            <h3 data-stat="suspicious">0</h3>
+            <p>Suspicious Links</p>
+          </article>
+
+          <article class="stat-card danger">
+            <div class="stat-top">
+              <div class="stat-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
+              <span class="trend-down">-1.2%</span>
+            </div>
+            <h3 data-stat="highRisk">0</h3>
+            <p>High-Risk Links</p>
+          </article>
+
+          <article class="stat-card info">
+            <div class="stat-top">
+              <div class="stat-icon"><i class="fa-solid fa-calendar-day"></i></div>
+              <span class="trend-up">+7.3%</span>
+            </div>
+            <h3 data-stat="today">0</h3>
+            <p>Links Scanned Today</p>
+          </article>
+
+          <article class="stat-card danger">
+            <div class="stat-top">
+              <div class="stat-icon"><i class="fa-solid fa-bug"></i></div>
+              <span class="trend-down">-0.4%</span>
+            </div>
+            <h3 data-stat="threats">0</h3>
+            <p>Threats Detected</p>
+          </article>
+        </section>
+
+        <section class="dashboard-grid">
+          <div class="card">
+            <div class="card-header">
+              <h2>Threat Distribution</h2>
+              <span class="trend-up">Demo statistics</span>
+            </div>
+            <div class="card-body">
+              <div class="chart-wrap">
+                <canvas id="threatChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Recent Alerts</h3>
+            </div>
+            <div class="card-body">
+              <div class="alerts-list">
+                <div class="alert-item">
+                  <div>
+                    <strong>"verify-payment-update"</strong>
+                    <small>Detected 18 minutes ago</small>
+                  </div>
+                  <span class="risk-chip warning">Warning</span>
+                </div>
+
+                <div class="alert-item">
+                  <div>
+                    <strong>"secure-bank-login"</strong>
+                    <small>Detected 2 hours ago</small>
+                  </div>
+                  <span class="risk-chip danger">Danger</span>
+                </div>
+
+                <div class="alert-item">
+                  <div>
+                    <strong>"cloud-account-verify"</strong>
+                    <small>Detected yesterday</small>
+                  </div>
+                  <span class="risk-chip safe">Safe</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
